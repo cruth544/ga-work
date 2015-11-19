@@ -1,0 +1,21 @@
+body {
+  font-family: Helvetica;
+  color: red;
+  background-color: yellow;
+  margin: 15px;
+}
+h1 {
+  text-align: center;
+}
+
+div {
+  color: blue;
+}
+
+#coments-title {
+  font-size: 28px;
+}
+
+.another-class {
+  border: solid red 2px;
+}

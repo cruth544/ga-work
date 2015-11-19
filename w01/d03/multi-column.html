@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Directions:
+  Starting with the following code, create a 3-column layout
+  where the first and third columns act as sidebars of width 15% each
+  and the center column acts as the main content column with a width
+  of 70%
+-->
+<html>
+<head>
+  <style>
+    #container {
+
+    }
+    .column {
+      border: 1px solid black;
+      float: left;
+    }
+    #column1 {
+      width: 15%;
+    }
+    #column2 {
+      width: 69%;
+    }
+    #column3 {
+      width: 15%;
+    }
+    #text {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="column" id="column1">Left Sidebar</div>
+    <div class="column" id="column2">Main Content</div>
+    <div class="column" id="column3">Right Sidebar</div>
+    <div id="text">Random text that should show up below the columns
+  </div>
+</body>
+</html>

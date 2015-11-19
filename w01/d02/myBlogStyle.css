@@ -1,0 +1,70 @@
+html {
+  text-align: center;
+  /*background: url("dreamKhaleesi.jpg");*/
+  background-color: grey;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: "Georgia", "Courier New", "Times New Roman";
+}
+
+img {
+}
+.profile {
+  height: 250px;
+  width: 250px;
+  border: 6px solid black;
+  border-radius: 180px;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav {
+  padding-top: 100px;
+}
+
+li {
+  display: block;
+  padding: 0px 10px 18px 0px;
+  width: 100px;
+  color: rgba(150, 150, 150, 1);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+main {
+  font-size: 14px;
+}
+
+footer {
+  font-size: 10px;
+  font-style: italic;
+}
+
+.profilePicture {
+  cursor: pointer;
+}
+
+.navBar {
+  position: fixed;
+  padding: 6px;
+  top: 0; left: 0;
+
+  height: 100%; width: 100px;
+  background: white;
+  transition: width ease .5s;
+}
+
+body.open-nav & {
+  width: 150px;
+}
+
+/*.fake-link {
+  color: rgba(150, 150, 150, 1);
+  text-decoration: underline;
+  cursor: pointer;
+}*/
