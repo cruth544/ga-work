@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="target">Hello</div>
+​
+<div id="a-id"></div>
+<div id="b-id"></div>
+</body>
+<script>
+    /* 1)  Create a variable that will be implicitly assigned to the global scope
+     *      NOTE: Doing this will cause an error in 'strict mode'. It's important to really understand
+     *      when an implicit global variable is created. How is this different than explicitly creating a
+     *      variable on the global scope?
+     * */
+
+     var b = 1;
+    /* 2) Create a function named 'printGlobal' that will print out to the console the value of a variable 'b' which has been
+     *     declared outside of the 'printGlobal' declaration.
+     * */
+
+    function printGlobal () {
+        console.log(b);
+    }
+    /* 3) Create two functions: 'inner' and 'outer'. The outer function has a variable 'hats', which is a collection of colors
+     *     that represents the colors of the hats it has. The inner function will add the colors 'purple' and 'white' to the hats
+     *     collection and print to the console the hat colors. Arrange it so that a call to 'outer' will result in the hat colors
+     *     being printed to the console. The colors 'purple' and 'white' must be present.
+     * */
+
+    function outer () {
+        var hats = ["blue", "red"];
+        var inner = function () {
+            hats.push("purple", "white");
+        }
+        return hats;
+    }
+    /* 4) Use a function expression to create a new function.  The function will add an event listener to the element with id 'target',
+     *     the event listener will listen for the 'click' event and pop up an alert that notifies the user 'Hello has been clicked'
+     * */
+      var setHelloOnClick = function () {
+         var clickHello = document.getElementById('target');
+         clickHello.addEventListener('click', function() {alert("Hello has been clicked")});
+      }
+      setHelloOnClick();
+
+    /* 5) Create a small DOM library inside of your own namespace. The library will be an object that has a function applyToId(). The applyToId
+     *     function will take a string as a parameter. The function will be called with the argument 'id', and should find all elements in the dom
+     *     where 'id' appears anywhere in the id attribute of the element. It should insert the text 'found id in this elements attribute' into all
+     *     those elements it finds.
+     * */
+
+     function DOMLibrary() {
+        this.applyToId = function (id) {
+          if (typeof id === "string") {
+            document.getElementById(id).innerHTML = "Found " + id + " in this elements attribute.";
+          };
+        }
+     }
+
+    /* 6) Create a lexer that will break apart a source code file into separate lines.
+     *      The source code string will be 'var x  = 12; var b = x; return x+b;'.
+     *      This lexer will do two passes:
+     *      Pass 1) will break the string up where each statement ending in a ';' is
+     *      considered to be one line.
+     *      Pass 2) will then break up those tokens into further tokens, putting left-hand side
+     *      declarations in one array, and right-hand side assignments into another array
+     *      If the lexer finds a line statement that does not have an assignment, it will consider the
+     *      line statement to be an executable statement, ignore it during the first two passes, and then at
+     *      the end will attempt to replace the variables in the statement with their values by using the arrays created in
+     *      the previous passes.
+     * */
+
+     function lexerBreaker (str) {
+        str = str.split(";");
+        var leftArray = [];
+        var rightArray = [];
+
+      function splitArray (arrayToSplit, splitChar) {
+        var leftArray = [];
+        var rightArray = [];
+        for (var i = 0; i < arrayToSplit.length; i++) {
+          arrayToSplit[i] = arrayToSplit[i].split(splitChar);
+          if (arrayToSplit[i] instanceof Array) {
+            leftArray.push(arrayToSplit[i][0]);
+            rightArray.push(arrayToSplit[i][1]);
+          };
+        }
+        console.log(arrayToSplit);
+       return [leftArray, rightArray];
+      }
+       console.log(splitArray(str, "="));
+    }
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
