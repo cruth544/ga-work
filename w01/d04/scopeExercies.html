@@ -76,23 +76,53 @@
 
      function lexerBreaker (str) {
         str = str.split(";");
-        var leftArray = [];
-        var rightArray = [];
+        var tmpArray = [];
+        var left = [];
+        var right = [];
 
-      function splitArray (arrayToSplit, splitChar) {
-        var leftArray = [];
-        var rightArray = [];
-        for (var i = 0; i < arrayToSplit.length; i++) {
-          arrayToSplit[i] = arrayToSplit[i].split(splitChar);
-          if (arrayToSplit[i] instanceof Array) {
-            leftArray.push(arrayToSplit[i][0]);
-            rightArray.push(arrayToSplit[i][1]);
-          };
+        function splitArray (arrayToSplit, splitChar) {
+          var leftArray = [];
+          var rightArray = [];
+          for (var i = 0; i < arrayToSplit.length; i++) {
+            arrayToSplit[i] = arrayToSplit[i].split(splitChar);
+            if (arrayToSplit[i] instanceof Array) {
+              leftArray.push(arrayToSplit[i][0]);
+              rightArray.push(arrayToSplit[i][1]);
+            }
+          }
+         return [leftArray, rightArray];
         }
-        console.log(arrayToSplit);
-       return [leftArray, rightArray];
-      }
-       console.log(splitArray(str, "="));
+        function objectAfterStr (array, string) {
+          var index = array.indexOf(string) + 1;
+          if (index > 0) {
+            return array[index];
+          }
+          if (array[index] instanceof Array) {
+            return objectAfterStr (array[index], string);
+          }
+          return null;
+        }
+        function removeEmptyIndex (array) {
+          for (var i = 0; i < array.length; i++) {
+            if (!array[i]) {
+              array.splice(i, 1);
+              i--;
+            }
+          }
+        }
+
+        tmpArray = splitArray(str, "=");
+        left = tmpArray[0];
+        right = tmpArray[1];
+        console.log("Left", left);
+        tmpArray = splitArray(left, " ");
+        console.log("tmp", tmpArray);
+        console.log("Left", left)
+        for (var i = 0; i < left.length; i++) {
+          left[i] = objectAfterStr(left[i], "var");
+        }
+        removeEmptyIndex(left);
+        console.log(left, right);
     }
 
 
