@@ -74,7 +74,65 @@
      *      the previous passes.
      * */
 
-     function lexerBreaker (str) {
+     function lexerBreaker (string) {
+      //go ahead and split up the starting string by ';'
+        string = string.split(";");
+        var varArray = [];
+        var valueArray = [];
+        var returnValue;
+        var equationObject = {};
+
+        //divide into 2 arrays by '='
+        for (var i = 0; i < string.length; i++) {
+          if (string[i].includes("=")) {
+            var splitString = string[i].split("=");
+            varArray.push(splitString[0]);
+            valueArray.push(splitString[1]);
+          }
+          if (string[i].includes("return")) {
+            returnValue = string.splice(i, 1);
+          }
+        }
+
+        //separates arrays by spaces
+        //deals with both 'var' and 'value'
+        for (var i = 0; i < varArray.length; i++) {
+          varArray[i] = varArray[i].split(" ");
+          valueArray[i] = valueArray[i].split(" ");
+        }
+        //deals with just 'return' statement
+        for (var i = 0; i < returnValue.length; i++) {
+          returnValue[i] = returnValue[i].split(" ");
+        }
+
+        //grab variable which comes after 'var'
+        for (var i = 0; i < varArray.length; i++) {
+          var varIndex = varArray[i].indexOf("var") + 1;
+          varArray[i] = varArray[i][varIndex];
+        }
+        //grabs 'value' which should always come after a space,
+        //being the '1' index of the array
+        for (var i = 0; i < valueArray.length; i++) {
+          valueArray[i] = valueArray[i][1];
+          if (Number(valueArray[i])) {
+            valueArray[i] = Number(valueArray[i]);
+          }
+        }
+        //take everything that comes after 'return'
+        var returnIndex = returnValue[0].indexOf("return") + 1;
+        returnValue = returnValue[0][returnIndex];
+
+        //
+        for (var i = 0; i < varArray.length; i++) {
+          equationObject[varArray[i]] = valueArray[i];
+        }
+
+
+
+        return returnValue;
+     }
+
+     function customLexerBreaker (str) {
         str = str.split(";");
         var tmpArray = [];
         var left = [];
@@ -92,6 +150,7 @@
           }
          return [leftArray, rightArray];
         }
+
         function objectAfterStr (array, string) {
           var index = array.indexOf(string) + 1;
           if (index > 0) {
@@ -102,6 +161,7 @@
           }
           return null;
         }
+
         function removeEmptyIndex (array) {
           for (var i = 0; i < array.length; i++) {
             if (!array[i]) {
