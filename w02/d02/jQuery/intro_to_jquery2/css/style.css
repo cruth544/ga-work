@@ -1,0 +1,10 @@
+body {
+  visibility: hidden;
+}
+
+#panel {
+  background-color: hotpink;
+  height: 200px;
+  width: 100px;
+  display: none;
+}
