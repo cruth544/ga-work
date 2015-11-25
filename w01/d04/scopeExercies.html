@@ -82,6 +82,21 @@
         var returnValue;
         var equationObject = {};
 
+        function fillInReturnStatement (obj, returnStatement) {
+          var alreadyReplacedVariables = 0;
+          for (var key in obj) {
+            if (returnStatement.indexOf(key) > -1) {
+              returnStatement = returnStatement.replace(key, obj[key]);
+            } else {
+              alreadyReplacedVariables++;
+            }
+          }
+          if (alreadyReplacedVariables >= Object.keys(obj).length) {
+            return returnStatement;
+          }
+          return fillInReturnStatement (obj, returnStatement);
+        }
+
         //divide into 2 arrays by '='
         for (var i = 0; i < string.length; i++) {
           if (string[i].includes("=")) {
@@ -114,9 +129,10 @@
         //being the '1' index of the array
         for (var i = 0; i < valueArray.length; i++) {
           valueArray[i] = valueArray[i][1];
-          if (Number(valueArray[i])) {
-            valueArray[i] = Number(valueArray[i]);
-          }
+          //converts strings into numbered value
+          // if (Number(valueArray[i])) {
+          //   valueArray[i] = Number(valueArray[i]);
+          // }
         }
         //take everything that comes after 'return'
         var returnIndex = returnValue[0].indexOf("return") + 1;
@@ -126,6 +142,8 @@
         for (var i = 0; i < varArray.length; i++) {
           equationObject[varArray[i]] = valueArray[i];
         }
+
+        returnValue = fillInReturnStatement(equationObject, returnValue);
 
 
 
