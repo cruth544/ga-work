@@ -66,6 +66,9 @@ $(function  () {
     var action        = depositWithdraw(button.attr('id'))
     var balance       = $('#'+ account +'-balance')
     var input         = $('#'+ account +'-input')
+
+    if (Number(input.val()) < 0) return
+
     var finalBalance  = handleDollarString(
                           balance.text(),
                           operators(action),

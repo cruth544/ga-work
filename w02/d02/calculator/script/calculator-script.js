@@ -36,19 +36,19 @@ function isOperator (button) {
       var currentInput = Number(document.getElementById('output').value);
       if (button === '+') {
         operatorClicked = function (last, input) {
-          return operators.addition(last, input);
+          return operators('addition')(last, input);
         }
-      } else if (button === '-') {
+      } else if (button === '—') {
         operatorClicked = function (last, input) {
-          return operators.subtract(last, input);
+          return operators('subtract')(last, input);
         }
       } else if (button === 'x') {
         operatorClicked = function (last, input) {
-          return operators.multiply(last, input);
+          return operators('multiply')(last, input);
         }
       } else if (button === '/') {
         operatorClicked = function (last, input) {
-          return operators.divide(last, input);
+          return operators('divide')(last, input);
         }
       }
       lastInput = currentInput;
@@ -61,7 +61,7 @@ function isOperator (button) {
 
 function isEnter (button) {
   if (button === document.getElementById('enter').innerHTML) {
-    operators.enter(Number(document.getElementById('output').value), function (last, input) {
+    operators('enter')(Number(document.getElementById('output').value), function (last, input) {
       return operatorClicked(last, input);
     })
   }
