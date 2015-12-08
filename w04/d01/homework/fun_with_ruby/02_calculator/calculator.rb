@@ -1,41 +1,39 @@
-def add(x,y)
-	return x + y
+def add a, b
+  return a + b
 end
 
-def subtract(x,y)
-	x - y
+def subtract a, b
+  return a - b
 end
 
-def sum x
-	sum = 0
-	x.each do |v|
-		sum += v
-	end
-	sum
+def sum array
+  total = 0
+  array.each do |num|
+    total += num
+  end
+  return total
 end
 
-def multiply(*numbers)
-	mult = 1
-	numbers.each do |number|
-		mult *= number
-	end
-	mult
+def multiply *array
+  product = 1
+  array.each do |num|
+    product *= num
+  end
+  return product
 end
 
-def power(x,y)
-	x**y
+def power a, b
+  return a ** b
 end
 
-def factoral(num)
-	if num == 0 or num == 1
-		1
-	else
-		sum = 1
-		for i in (1..num)
-			sum *= i
-		end
-		sum
-	end
+def factoral num
+  if num == 0
+    return 1
+  end
+
+  product = 1
+  for n in num.downto(1)
+    product *= n
+  end
+  return product
 end
-
-
