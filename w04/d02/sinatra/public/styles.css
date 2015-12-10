@@ -1,0 +1,12 @@
+#greeting {
+  color: black;
+  text-align: center;
+  font-size: 20px;
+}
+
+.hello {
+  color: green;
+}
+.world {
+  color: red;
+}

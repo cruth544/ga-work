@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Pick Me Up Before You Go Go
+    %link{rel: :stylesheet, type: "text/css", href: "styles.css"}
+  %body
+    %header
+      %div Pick Me Up!
+      %div Before You Go-Go!
+
+    =yield
+
+    %footer
+      %a{href: "/thanks", class: "button"} Thanks!
+      %a{href: "/", class: "button"} Meh.

@@ -1,0 +1,26 @@
+html {
+  background-color: yellow;
+}
+body {
+  text-align: center;
+}
+
+div {
+  font-family: Helvetica;
+  font-size: 60px;
+  font-weight: bold;
+  color: pink;
+}
+
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}
+.green {
+  color: green;
+}
+.cyan {
+  color: cyan;
+}

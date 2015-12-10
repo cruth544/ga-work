@@ -1,3 +1,5 @@
+require 'pry'
+
 guest_list = [
   {name: "Keyan",
     age: 30},
