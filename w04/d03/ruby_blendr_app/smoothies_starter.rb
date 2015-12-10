@@ -31,7 +31,7 @@ Blender.blend
 
 # Sample of ingredients to get you started...
 # Every Morning I make a smoothie with the follow ingredients:
-smoothie_ingredients = [
+@smoothie_ingredients = [
   'flax seeds',
   'chia seeds',
   'coconut flakes',
