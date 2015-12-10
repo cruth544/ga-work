@@ -11,6 +11,10 @@ class Blender
       # binding.pry
       self.print_all ingredients
     else
+      100.times do
+        puts ""
+      end
+      system "clear" or system "cls"
       puts "Blender is off"
       puts "Would you like to turn on the blender?"
 
