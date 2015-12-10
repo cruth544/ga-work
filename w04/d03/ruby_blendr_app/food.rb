@@ -2,11 +2,12 @@ require_relative 'char'
 
 class Food
   def self.colorize_word word
+    # binding.pry
     word          = word.split('')
     color         = self.random_color
     colored_word  = []
     for char in word
-      if char == " " or char == ","
+      if char == " " or char == "," or char == "'" or char == '"'
         next
       end
       colored_word.push(Char.new char, color)

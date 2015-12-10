@@ -2,7 +2,7 @@ require_relative 'get_input'
 require_relative 'ingredients'
 
 class Blender
-  @@is_on = true
+  @@is_on = false
   @smoothie_ingredients = [
   'flax seeds',
   'chia seeds',
@@ -37,8 +37,19 @@ class Blender
 
   def self.blend
     if @@is_on
-      # ingredients = Input.get_input
-      ingredients = Ingredients.colorize_everything @smoothie_ingredients
+      ingredients = Input.get_input
+      # ingredients = @smoothie_ingredients
+      # ingredients = Ingredients.colorize_everything ingredients
+      ingredients = ingredients.flatten
+      loop do
+        system "clear" or system "cls"
+        self.print_all ingredients
+        puts "Start?"
+        answer = gets.chomp.downcase
+        if answer == "yes" or answer == "start" or answer == "run"
+          break
+        end
+      end
       for i in 1..50000000
         if i % 1000000 == 0
           system "clear" or system "cls"
@@ -52,10 +63,10 @@ class Blender
           puts "#{self.spaces}   BZZZZZZZZZZZ"
         end
       end
-
+      system "clear"
+      self.print_all ingredients
       puts "\n\nEnjoy!\n\n"
       self.blend_again
-
       # ingredients = ingredients.flatten.shuffle
       # binding.pry
       # self.print_all ingredients

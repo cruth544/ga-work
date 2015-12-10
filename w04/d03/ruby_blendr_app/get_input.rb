@@ -3,7 +3,8 @@ require_relative 'ingredients'
 class Input
   def self.get_input
     ingredients = []
-    puts "\nTo submit, enter 'Run' or hit enter again"
+    system "clear"
+    puts "To submit, enter 'Run' or hit enter again"
     puts "What would you like to blend?\n\n"
     loop do
       item = gets.chomp
