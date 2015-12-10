@@ -20,6 +20,7 @@ class Blender
 
       if self.prompt
         @@is_on = true
+        system "clear" or system "cls"
         self.blend
       end
     end
@@ -34,6 +35,7 @@ class Blender
       puts "Blender was not turned on"
       return false
     else
+      system "clear" or system "cls"
       puts "Please answer 'Yes' or 'No'"
       self.prompt
     end
@@ -60,7 +62,12 @@ class Blender
     answer = gets.chomp.downcase
     if answer == "yes"
       self.blend
+    elsif answer != "no"
+      system "clear" or system "cls"
+      puts "Please answer 'Yes' or 'No'\n"
+      self.blend_again
     end
+
   end
 
 end

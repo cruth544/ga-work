@@ -17,7 +17,12 @@ class Food
 
   private
   def self.random_color
-    return String.colors[Random.new_seed % String.colors.length]
+    tmp = String.colors[Random.new_seed % String.colors.length]
+    if tmp == :black or tmp == :light_black
+      # binding.pry
+      self.random_color
+    end
+    return tmp
   end
 
 end
