@@ -1,0 +1,12 @@
+<h1>Today's Beans</h1>
+<!-- <%= @beans %> -->
+<ul>
+  <% @beans.each do |bean| %>
+    <li>
+
+    <strong><%= link_to bean.name, bean_path(bean) %></strong></a> - <%=bean.origin%>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Bean", new_bean_path %>

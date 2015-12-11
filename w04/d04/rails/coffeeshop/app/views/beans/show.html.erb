@@ -1,0 +1,6 @@
+<h1> <%= @bean.name %> </h1>
+<p>This coffee is a <%= @bean.roast %> roast from <%= @bean.origin %>, and we have <%= @bean.quantity %> stones</p>
+
+<%= link_to "Edit", edit_bean_path %>
+<%= link_to "Back to the list!", beans_path %>
+<%= link_to "Destroy Bean!", bean_path, method: :delete %>

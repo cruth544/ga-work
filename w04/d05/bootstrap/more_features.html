@@ -1,0 +1,49 @@
+<html>
+<head>
+    <!-- Bootstrap CSS file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>Bootstrap Grid</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Responsive Columns stack on top of each other on mobile -->
+            <div class="col-md-4">
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-info">Login</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-success btn-lg">Woohoo!</button>  
+            </div>
+            <div class="col-md-4">
+                <div data-toggle="tooltip" data-placement="left" title="Tooltip on left">Column 3</div>
+                <!-- Fixed for mobile by using the col-xs-.. classes-->
+                <div class="row">
+                    <div class="col-xs-6">Nested Column 1</div>
+                    <div class="col-xs-6">Nested Column 2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS requires jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap JS file -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        $('[data-toggle="tooltip"]').tooltip()
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+    <!-- Bootstrap CSS file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>Bootstrap Grid</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Responsive Columns stack on top of each other on mobile -->
+            <div class="col-md-4">Column 1</div>
+            <div class="col-md-4">Column 2</div>
+            <div class="col-md-4">
+                <div>Column 3</div>
+                <!-- Fixed for mobile by using the col-xs-.. classes-->
+                <div class="row">
+                    <div class="col-xs-6">Nested Column 1</div>
+                    <div class="col-xs-6">Nested Column 2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS file -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
