@@ -22,20 +22,35 @@
                     <button type="submit" class="btn btn-info">Login</button>
                 </form>
             </div>
-            <div class="col-md-4">Column 2</div>
+            <div class="col-md-4">
+            Column 2
+            <br>
+            <button type="submit" class="btn btn-success">Submit</button>
+            </div>
             <div class="col-md-4">
                 <div>Column 3</div>
                 <!-- Fixed for mobile by using the col-xs-.. classes-->
                 <div class="row">
-                    <div class="col-xs-6">Nested Column 1</div>
-                    <div class="col-xs-6">Nested Column 2</div>
+                    <div class="col-xs-6" data-toggle="tooltip" data-placement="left" title="This is a Nested Column">
+                    Nested Column 1
+                    <br>
+                    <button type="submit" class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="This is the Submit Button on Coumn 1">Submit</button>
+                    </div>
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+                    <div class="col-xs-6">
+                    Nested Column 2
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Bootstrap JS file -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+      $('[data-toggle="tooltip"]').tooltip()
+    </script>
 
 </body>
 
