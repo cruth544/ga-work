@@ -1,0 +1,17 @@
+= form_for @gift do |f|
+  %div.form-group
+    = f.text_field :recipient, :placeholder => "Recipient", :class => "form-control"
+  %div.form-group
+    = f.text_field :title, :placeholder => "Gift Name", :class => "form-control"
+  %div.form-group
+    = f.text_field :price, :placeholder => "Price", :class => "form-control"
+  %div.form-group
+    = f.text_field :image_url, :placeholder => "Image URL", :class => "form-control"
+  %div.form-group
+    = f.text_area :description, :rows => "4", :placeholder => "Description", :class => "form-control"
+  %div.form-group.text-center
+    = f.label "Purchased?"
+    = f.check_box :is_purchased
+
+  %br
+  = f.submit :class => "submit-form-button"

@@ -1,0 +1,9 @@
+%h1.text-center Add New Gift
+%br
+
+/ = form_for @gift, url: new_gift_path, html: { method: :put } do |f|
+%div.form-container
+  = render "partials/form"
+%br
+%div.text-center
+  = link_to "Go Back", gifts_path

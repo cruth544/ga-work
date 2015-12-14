@@ -1,0 +1,32 @@
+%h1.text-center Gift List
+%br
+%table.table.table-hover.table-striped
+  %tr
+    %th.col-md-1
+    %th.col-md-2.text-info= link_to "Gift", gifts_title_path
+    %th.col-md-2.link-success= link_to "Friend", gifts_friend_path
+    %th.col-md-2.text-warning.text-center= link_to "Purchased", gifts_purchased_path
+    %th.col-md-2.text-danger.text-right= link_to "Price", gifts_price_path
+    %th.col-md-1
+  - @gifts.each do |gift|
+    %tr
+      %td
+      %td.text-info= link_to "#{gift.title}", gift_path(gift)
+      %td.text-success #{gift.recipient}
+      - purchased = "No"
+      - purchased = "Yes" if gift.is_purchased
+      %td.text-warning.text-center #{purchased}
+      %td.text-danger.text-right $#{gift.price}
+      %td
+  %tr
+    %td
+    %td
+    %td
+    %td
+    %td.text-right.text-danger
+      %strong
+        $#{@gift_total}
+    %td
+
+%div.text-center.text-success
+  = link_to "Add new Gift", new_gift_path

@@ -1,0 +1,16 @@
+%h1.text-center For #{@gift.recipient}
+%div.text-center
+  = image_tag "#{@gift.image_url}", style: "max-width: 100px; height: auto"
+%p.show-gift #{@gift.title} costs $#{@gift.price}
+%p.text-center #{@gift.description}
+
+%div.text-center
+  %br
+  %span
+    = link_to "Back", gifts_path
+  |
+  %span
+    = link_to "Edit", edit_gift_path
+  |
+  %span
+    = link_to "Delete", gift_path, method: :delete
