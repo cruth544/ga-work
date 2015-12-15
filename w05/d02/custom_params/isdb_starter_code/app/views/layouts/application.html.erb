@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= favicon_link_tag("http://images.clipartpanda.com/superman-logo-aiqpAr5iM.png")%>
+  <title>ISDB</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="jumbotron">
+	<div class="container">
+		<%= image_tag "gru.jpg", id: "image", style: "float: right; width: 150px;" %>
+		<h2>Internet Superhero Database</h2>
+		<br>
+	<%= link_to "Display all", heroes_path %>
+	</div>
+</div>
+<%= yield %>
+
+</body>
+</html>

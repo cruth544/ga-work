@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h1><%= @hero.name %></h1>
+  <h5><%= "#{@hero.name} is #{@hero.description} with #{@hero.powers} abilities."%></h5>
+
+  <h3>Superhero Data</h3>
+  <table class="table table-striped">
+      <%= cache @hero do %>
+    <tr>
+      <th>Alias</th>
+      <td><%= @hero.identity %></td>
+    </tr>
+    <tr>
+      <th>Last Known Location</th>
+      <td><%= @hero.location %></td>
+    </tr>
+    <tr>
+      <th>Power</th>
+      <td><%= @hero.powers %></td>
+    </tr>
+    <tr>
+      <th>Weakness</th>
+      <td><%= @hero.weakness %></td>
+    </tr>
+    <tr>
+      <th>Stance</th>
+      <td><%= @hero.description %></td>
+    </tr>
+    <tr>
+      <th>Arch-Nemesis</th>
+      <td><%= @hero.nemesis %></td>
+    </tr>
+      <% end %>
+  </table>
+</div>

@@ -1,0 +1,13 @@
+.hover {
+  opacity: 0.9;
+}
+tr a:hover {
+  background-color: #7f8c8d !important;
+}
+table {
+  margin: auto;
+}
+
+.name {
+	color: #263246;
+}

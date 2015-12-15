@@ -1,0 +1,25 @@
+<div class="container">
+  <h3> Good Morning you beautiful evil genius</h3>
+  <p> Heres the current information on those meddling superheroes</p>
+  <br>
+  <h3>Superhero Data</h3>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Alias Supposedely</th>
+      <th>Superpower</th>
+      <th>Location...maybe</th>
+    </tr>
+    <% @heroes.each do |hero| %>
+      <tr>
+        <td>
+          <%= link_to '<button class="btn btn-primary">&nbsp;</button>'.html_safe, hero_path(hero) %>
+          <span class="name">&nbsp;&nbsp;<%= hero.name %></span>
+        </td>
+        <td><%= hero.identity %></td>
+        <td><%= hero.powers %></td>
+        <td><%= hero.location %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
