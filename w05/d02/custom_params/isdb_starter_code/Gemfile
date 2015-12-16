@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 #OUR ISDB gems...
 
 # gem for pagination of our index
-# gem 'kaminari'
+gem 'kaminari'
 
 # gem to generate fake information, names and text
 gem 'faker'

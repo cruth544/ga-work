@@ -1,5 +1,14 @@
 <div class="container">
 
+  <%= form_tag(hero_path, method:"get") do %>
+    See another superhero (by id) <%= text_field_tag :hero_id %>
+    <%= submit_tag "Go", "class" => "btn btn-primary" %>
+  <% end %>
+  <%= form_tag hero_path, method: 'get' do %>
+    <%= submit_tag "Prev", "class" => "btn btn-primary" %>
+    <%= submit_tag "Next", "class" => "btn btn-primary" %>
+  <% end %>
+
   <h1><%= @hero.name %></h1>
   <h5><%= "#{@hero.name} is #{@hero.description} with #{@hero.powers} abilities."%></h5>
 

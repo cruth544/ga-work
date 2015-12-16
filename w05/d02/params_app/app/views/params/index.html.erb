@@ -1,0 +1,8 @@
+<h1>Params#index</h1>
+<p>Find me in app/views/params/index.html.erb</p>
+
+<%= form_tag params_next_path, method: "get" do %>
+  My name is: <%= text_field_tag :name %>
+  My favorite language is: <%= text_field_tag :favorite %>
+  <%= submit_tag "Submit Page" %>
+<% end %>

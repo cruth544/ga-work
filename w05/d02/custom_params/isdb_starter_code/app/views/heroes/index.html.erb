@@ -2,13 +2,24 @@
   <h3> Good Morning you beautiful evil genius</h3>
   <p> Heres the current information on those meddling superheroes</p>
   <br>
+  <%= form_tag('/', method: 'get') do %>
+    Search Superhero by
+    <%= select_tag "search", options_for_select(["name", "identity", "powers", "location"]) %>
+    : <%=text_field_tag :query %>
+    <%= submit_tag "Search", "class" => "btn btn-primary"%>
+  <% end %>
+
+  <% if @paginate %>
+    <%= paginate @heroes %>
+  <% end %>
+
   <h3>Superhero Data</h3>
   <table class="table table-striped">
     <tr>
-      <th>Name</th>
-      <th>Alias Supposedely</th>
-      <th>Superpower</th>
-      <th>Location...maybe</th>
+      <th><%= link_to "Name", heroes_sort_path(sort_by: "name") %></th>
+      <th><%= link_to "Alias Supposedely", heroes_sort_path(sort_by: "identity") %></th>
+      <th><%= link_to "Superpower", heroes_sort_path(sort_by: "powers") %></th>
+      <th><%= link_to "Location...maybe", heroes_sort_path(sort_by: "location") %></th>
     </tr>
     <% @heroes.each do |hero| %>
       <tr>

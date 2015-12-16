@@ -3,6 +3,7 @@ class BeansController < ApplicationController
 
   def index
     @beans = Bean.all
+    # render layout: "sidebar"
   end
 
   def show
