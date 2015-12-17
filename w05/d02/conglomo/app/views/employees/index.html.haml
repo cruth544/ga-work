@@ -1,0 +1,22 @@
+%h3.text-center Employees
+
+/ = paginate @employees
+%table.table.table-striped
+  %tr
+    %th
+      = link_to "Name", employees_sort_path(sort_by: "name")
+    %th
+      = link_to "Age", employees_sort_path(sort_by: "age")
+    %th
+      = link_to "City", employees_sort_path(sort_by: "address")
+    %th
+      = link_to "Salary", employees_sort_path(sort_by: "salary")
+    %th
+      = link_to "Department", employees_sort_path(sort_by: "department_id")
+  - @employees.each do |employee|
+    %tr
+      %td #{link_to employee.name, employee_path(employee)}
+      %td #{employee.age}
+      %td #{employee.address}
+      %td $#{number_with_delimiter(employee.salary, :delimiter => ',')}
+      %td #{employee.department.name}

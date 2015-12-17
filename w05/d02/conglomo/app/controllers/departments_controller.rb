@@ -1,4 +1,10 @@
 class DepartmentsController < ApplicationController
-  def name
+
+  def index
+    @departments = Department.all
   end
+
+  def show
+  end
+
 end

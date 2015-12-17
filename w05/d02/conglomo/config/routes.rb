@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
-  get 'departments/name'
+  root 'departments#index'
 
-  get 'employees/name'
+  get 'employees/sort'
+  get 'employees/department'
 
-  get 'employees/age:integer'
+  resources :departments, only: [:index, :show]
+  resources :employees, only: [:index, :show]
 
-  get 'employees/address'
+  # get 'departments/index'
 
-  get 'employees/salary:integer'
+  # get 'departments/show'
 
-  get 'employees/department_id:integer'
+  # get 'employees/index'
+
+  # get 'employees/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

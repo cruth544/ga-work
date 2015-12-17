@@ -1,0 +1,8 @@
+%h3.center-text-custom Departments
+%br
+
+%div
+  %span.col-md-1
+  - @departments.each do |department|
+    %span.col-md-2.center-text-custom #{link_to department.name, employees_department_path(department)}
+  %span.col-md-1

@@ -1,8 +1,13 @@
 require 'test_helper'
 
 class DepartmentsControllerTest < ActionController::TestCase
-  test "should get name" do
-    get :name
+  test "should get index" do
+    get :index
+    assert_response :success
+  end
+
+  test "should get show" do
+    get :show
     assert_response :success
   end
 

@@ -1,0 +1,17 @@
+%h1 Employees#show
+%p Find me in app/views/employees/show.html.erb
+%h3 #{@employee.name}
+
+%table.table.table-stripped
+  %tr
+    %th Name
+    %th Age
+    %th City
+    %th Salary
+    %th Department
+  %tr
+    %td #{@employee.name}
+    %td #{@employee.age}
+    %td #{@employee.address}
+    %td $#{@employee.salary}
+    %td #{Department.list[@employee.department_id]}
