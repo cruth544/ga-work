@@ -1,5 +1,11 @@
-%h1.text-center Books
+%h1.text-center
+  =link_to "Books", root_path, {:style => 'color: #000'}
 %br
+.text-center
+  = form_tag('/', method: 'get') do
+    = select_tag "search", options_for_select(["Book Title", "Author", "Category", "Publisher"])
+    = text_field_tag :query
+    = submit_tag "Search", "class" => "btn-sm btn-primary"
 .text-center
   = paginate @books
 %table.table.table-striped
@@ -7,19 +13,23 @@
     %th
     %th
       =link_to "Name", books_sort_path(sort_by: "name")
-    %th Author
-    /  =link_to "Author", books_sort_path(sort_by: "author_id")
+    %th
+      =link_to "Author", authors_path
     %th
       =link_to "Publisher", books_sort_path(sort_by: "publisher")
-    %th Category
-    /  =link_to "Category", books_sort_path(sort_by: "categories.name")
+    %th
+      =link_to "Category", categories_path
     %th
       =link_to "Price", books_sort_path(sort_by: "price")
   - @books.each do |book|
     %tr
       %td
       %td.col-md-2 #{link_to book.name, book_path(book)}
-      %td.col-md-2 #{book.author.name}
-      %td.col-md-3 #{book.publisher}
-      %td.col-md-2 #{book.categories.first.name}
+      %td.col-md-2
+        = link_to book.author.name, author_path(book.author)
+      %td.col-md-3
+        = link_to book.publisher, books_publisher_path(book.publisher)
+      %td.col-md-2
+        - category = book.categories.first
+        = link_to category.name, books_category_path(category)
       %td.col-md-2 $#{book.price}

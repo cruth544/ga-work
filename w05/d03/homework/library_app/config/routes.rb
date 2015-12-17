@@ -28,7 +28,9 @@ Rails.application.routes.draw do
   # get 'authors/update'
 
   # get 'authors/destroy'
+  root 'books#index'
   get 'books/category'
+  get 'books/publisher'
   get 'authors/sort'
   get 'books/sort'
   # get 'books/categories'

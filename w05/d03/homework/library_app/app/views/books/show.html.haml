@@ -1,2 +1,23 @@
-%h1 Books#show
-%p Find me in app/views/books/show.html.haml
+%h3.text-center #{@book.name}
+
+/ = paginate @employees
+%table.table.table-striped
+  %tr
+    %th
+      = link_to "Author", author_path(@book.author_id)
+    %th Description
+    %th Publisher
+    %th Category
+    %th Price
+    %th Code
+
+  %tr
+    %td #{link_to @book.author.name, author_path(@book.author_id)}
+    %td #{@book.description}
+    %td
+      = link_to @book.publisher, books_publisher_path(@book.publisher)
+    %td
+      - category = @book.categories.first
+      = link_to category.name, books_category_path(category)
+    %td $#{@book.price}
+    %td #{@book.isbn}

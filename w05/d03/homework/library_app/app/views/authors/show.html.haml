@@ -1,2 +1,15 @@
-%h1 Authors#show
-%p Find me in app/views/authors/show.html.haml
+%h3.text-center #{@author.name}
+%br
+%table.table.table-striped
+  %tr
+    %th
+    %th Books
+    %th Categories
+
+  - @author.books.each do |book|
+    %tr
+      %td.col-md-1
+      %td.col-md-5 #{link_to book.name, book_path(book)}
+      %td.col-md-5
+        - category = book.categories.first
+        = link_to category.name, books_category_path(category)
