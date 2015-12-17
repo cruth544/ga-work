@@ -6,13 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-50.times do
+100.times do
   Author.create(
     name: Faker::Name.name,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.state}"
     )
 end
-250.times do
+1000.times do
   Book.create(
     name: Faker::Book.title,
     isbn: Faker::Number.number(8),
@@ -24,4 +24,8 @@ end
 end
 for category in Category.list
   Category.create(name: category)
+end
+
+Book.all.each do |book|
+  book.categories << Category.all[rand(Category.all.length - 1)]
 end

@@ -1,7 +1,8 @@
-%h1 Categories#index
-%p Find me in app/views/categories/index.html.haml
-
+%h1.text-center Categories
+%br
 %table.table.table-stripped
   %tr
-  - @categories.each do |category|
-    %th.col-md-2 #{category.name}
+    %th
+    - @categories.each do |category|
+      %th.text-center #{link_to category.name, books_category_path(category)}
+    %th

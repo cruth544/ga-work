@@ -1,11 +1,16 @@
 %h1.text-center Authors
+%br
+%div.text-center
+  = paginate @authors
 %table.table.table-striped
   %tr
     %th
-    %th Name
-    %th Address
+    %th
+      =link_to "Name", authors_sort_path(sort_by: "name")
+    %th
+      =link_to "Address", authors_sort_path(sort_by: "address")
   - @authors.each do |author|
     %tr
-      %td
-      %td #{author.name}
+      %td.col-md-1
+      %td #{link_to author.name, author_path(author)}
       %td #{author.address}

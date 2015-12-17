@@ -1,15 +1,25 @@
 %h1.text-center Books
+%br
+.text-center
+  = paginate @books
 %table.table.table-striped
   %tr
     %th
-    %th Name
+    %th
+      =link_to "Name", books_sort_path(sort_by: "name")
     %th Author
-    %th Publisher
-    %th Price
+    /  =link_to "Author", books_sort_path(sort_by: "author_id")
+    %th
+      =link_to "Publisher", books_sort_path(sort_by: "publisher")
+    %th Category
+    /  =link_to "Category", books_sort_path(sort_by: "categories.name")
+    %th
+      =link_to "Price", books_sort_path(sort_by: "price")
   - @books.each do |book|
     %tr
       %td
-      %td #{book.name}
-      %td #{book.author.name}
-      %td #{book.publisher}
-      %td #{book.price}
+      %td.col-md-2 #{link_to book.name, book_path(book)}
+      %td.col-md-2 #{book.author.name}
+      %td.col-md-3 #{book.publisher}
+      %td.col-md-2 #{book.categories.first.name}
+      %td.col-md-2 $#{book.price}
