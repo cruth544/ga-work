@@ -9,13 +9,17 @@
 50.times do
   Author.create(
     name: Faker::Name.name,
-    address: "#{Faker::Address.street_address} #{Faker::Address.city}, #{Faker::Address.state}")
+    address: "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.state}"
+    )
+end
+250.times do
   Book.create(
     name: Faker::Book.title,
     isbn: Faker::Number.number(8),
-    price: Faker::Number.between(1,20) * 5 - 1 + Faker::Number.between(95,99),
+    price: Faker::Number.between(1, 20) * 5 - 1 + Faker::Number.between(95, 99) / 100.00,
     description: Faker::Hipster.sentence,
-    publisher: Faker::Company.name
+    publisher: Faker::Company.name,
+    author_id: Faker::Number.between(1, Author.all.length)
     )
 end
 for category in Category.list

@@ -1,2 +1,11 @@
-%h1 Authors#index
-%p Find me in app/views/authors/index.html.haml
+%h1.text-center Authors
+%table.table.table-striped
+  %tr
+    %th
+    %th Name
+    %th Address
+  - @authors.each do |author|
+    %tr
+      %td
+      %td #{author.name}
+      %td #{author.address}

@@ -1,2 +1,15 @@
-%h1 Books#index
-%p Find me in app/views/books/index.html.haml
+%h1.text-center Books
+%table.table.table-striped
+  %tr
+    %th
+    %th Name
+    %th Author
+    %th Publisher
+    %th Price
+  - @books.each do |book|
+    %tr
+      %td
+      %td #{book.name}
+      %td #{book.author.name}
+      %td #{book.publisher}
+      %td #{book.price}
