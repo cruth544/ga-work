@@ -1,0 +1,11 @@
+%h3 hey im a login form
+
+=form_for @user, url: create_session_path do |f|
+  %div
+    = f.label "Email"
+    = f.email_field :email
+  %div
+    = f.label "Password"
+    = f.password_field :password
+
+  = f.submit "Sign in"

@@ -1,0 +1,40 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+
+$mumblr-violet:       #382ca3;
+$mumblr-violet-light: #5249c0;
+$mumblr-violet-dark:  #30249a;
+
+$mumblr-gray: #95A0AD;
+$light-gray:  #DDD;
+
+$white: #FFF;
+
+body {
+  background-color: $light-gray;
+}
+
+*,
+html,
+body {
+  font-family: Georgia, 'EB Garamond', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'EB Garamond', serif;
+}
+
+.btn-primary:link,
+.btn-primary:visited,
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: $mumblr-gray;
+  border-color: $white;
+  color: $white;
+}

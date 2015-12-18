@@ -69,6 +69,7 @@ class GiftsController < ApplicationController
   end
 
   def create
+    # gift_params is a custom private method for shorter code
     @gift = Gift.new(gift_params)
 
     if is_valid? @gift

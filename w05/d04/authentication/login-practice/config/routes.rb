@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   root 'users#index', as: :users
 
   get 'users/new' => 'users#new', as: :new_user
+  get 'sessions/new' => 'sessions#new', as: :new_session
 
   post '/' => 'users#create'
+  post 'sessions/new' => 'sessions#create', as: :create_session
+
+  get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session
+  get 'targets/' => 'targets#index', as: :targets
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

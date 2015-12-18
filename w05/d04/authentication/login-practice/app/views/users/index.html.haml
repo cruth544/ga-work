@@ -1,1 +1,12 @@
 %h3 I'm an index page
+
+- flash.each do |key, value|
+  %div{:class => "#{key}"}
+    = value
+= link_to "Register", new_user_path
+
+- if current_user
+  = link_to "Logout", destroy_session_path
+- else
+  = link_to "Login", new_session_path
+
