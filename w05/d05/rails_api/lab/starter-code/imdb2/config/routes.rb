@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   resources :movies
   resources :actors
+
+  namespace :api do
+    resources :movies
+  end
 end

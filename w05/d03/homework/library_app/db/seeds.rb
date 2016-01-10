@@ -27,5 +27,5 @@ for category in Category.list
 end
 
 Book.all.each do |book|
-  book.categories << Category.all[rand(Category.all.length - 1)]
+  book.categories << Category.all.sample
 end
