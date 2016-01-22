@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Github authentication</title>
+</head>
+<body>
+  <h1>GITHUB LOGIN USING PASSPORT</h1>
+  <div>
+    <!-- <% console.log(user) %> -->
+    <% if(user){ %>
+      <h2>Below is the data sent by Github</h2>
+      <pre>
+        <%= user.github %>
+      </pre>
+      <a href="/logout">Logout</a>
+    <% } else { %>
+      <!-- <a href="/auth/facebook">Login with Facebook</a> -->
+      <a href="/auth/github">Login with Github</a>
+    <% } %>
+  </div>
+</body>
+</html>

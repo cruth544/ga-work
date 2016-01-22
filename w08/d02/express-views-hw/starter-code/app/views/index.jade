@@ -1,0 +1,6 @@
+include partials/head.jade
+h1 Hello
+each quote in allQuotes
+  li= quote
+br
+!= link_to("NEW QUOTE", '/quotes/new')

@@ -1,0 +1,15 @@
+{
+  "name": "express-routing-lab",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "ejs": "^2.3.3",
+    "express": "~4.13.1",
+    "mongoose": "3.8",
+    "morgan": "~1.6.1"
+  },
+  "license": "ISC"
+}

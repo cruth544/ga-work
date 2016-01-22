@@ -1,0 +1,9 @@
+<h1>Candies!</h1>
+<% allCandies.forEach(function (singleCandy) { %>
+  <li>
+    <%- link_to(singleCandy.name, '/candies/' + singleCandy.name) %>
+    <%= singleCandy.color %>
+  </li>
+<% }) %>
+<br>
+<% include partials/form.ejs %>
