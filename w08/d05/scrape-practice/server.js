@@ -14,7 +14,7 @@ var users = require('./routes/users');
 
 var app = express();
 app.get('/scrape', function (req, res) {
-  var reviewCount = 87
+  var reviewCount = 55
   var counter = 0
   var reviewJson = {}
   async.whilst(function () {
@@ -23,7 +23,7 @@ app.get('/scrape', function (req, res) {
     return counter < reviewCount
   }, function (callback) {
     console.log("in whilst loop")
-    var url = 'http://www.yelp.com/biz/seven-grand-los-angeles?utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=ppGF7cs331hgnbdAMFtrKQ'
+    var url = 'http://www.yelp.com/biz/plan-check-kitchen-bar-los-angeles-5?utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=ppGF7cs331hgnbdAMFtrKQ'
     url = url.split("?")[0]
     url += '?start=' + counter
     url += '&q=happy%20hour'
