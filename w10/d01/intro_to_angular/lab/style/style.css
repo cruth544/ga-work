@@ -1,0 +1,21 @@
+main {
+  width: 60%;
+  margin: 0 auto;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  text-align: center;
+  padding: 20px !important;
+}
+.indent {
+  padding-left: 10px;
+}
+
+.bottom-border {
+  border-bottom: solid 2px #ccc;
+  padding-bottom: 5px;
+}

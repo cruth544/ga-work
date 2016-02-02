@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Game of Life</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/angular/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/GameController.js"></script>
+</head>
+<body ng-app="gameOfLife">
+	<div ng-controller="GameController as game" id="board">
+		<div class="row" ng-repeat="row in game.gameBoard">
+			<button ng-class="{alive: square.alive}" ng-repeat="square in row" ng-click="game.killOrRevive($parent.$index,$index)">
+				
+			</button>
+		</div>
+		<div id="navbar">
+			<h2>Life Cycle</h2>
+			<button class ="command" ng-click="game.lifeCycle()">Next</button>
+			<button class ="command" ng-click="game.toggleLifeCycle()">{{game.promise ? "Stop" : "Start"}}</button>
+			<p><img src="smile.png" class="smiley"/> Living: {{game.count}}</p>
+		</div>
+	</div>
+	<h1 id="title"> Conway's Game of Life</h1>
+	<div id="rules">
+		<h3>The Rules</h3>
+
+		<dl>
+			<dt><b>For a space that is 'populated':</b>
+			<dd>Each cell with one or no neighbors dies, as if by loneliness.
+			<dd>Each cell with four or more neighbors dies, as if by overpopulation.
+			<dd>Each cell with two or three neighbors survives.
+			<dt><b>For a space that is 'empty' or 'unpopulated'</b>
+			<dd>Each cell with three neighbors becomes populated.
+		</dl>
+	</div>
+</body>
+</html>
