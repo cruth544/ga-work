@@ -1,0 +1,9 @@
+body {
+  /*background-image: url('../images/background.png');*/
+}
+.adopted-kitties-controller {
+  float: right;
+}
+.unadopted-kitties-controller {
+  float: left;
+}

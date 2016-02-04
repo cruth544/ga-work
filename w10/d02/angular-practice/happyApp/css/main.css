@@ -1,0 +1,99 @@
+html {
+  background-color: #ededed;
+  text-align: center;
+}
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.text-container {
+  margin: 30px;
+}
+.title {
+  font-family: 'Candal', sans-serif;
+  font-size: 60px;
+}
+.slogan {
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+}
+.average-container {
+  height: 60px;
+  background-color: black;
+  width: 6%;
+  margin: auto;
+  /*padding: 20px;*/
+  border-radius: 16px;
+
+}.average {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: white;
+    margin: 0 auto;
+  }
+
+.history-container {
+  width: 50%;
+  margin: 0 auto;
+  min-height: 123px;
+}
+.history-item {
+  margin: auto;
+  display: inline-block;
+  margin: 6px;
+}
+.history-face {
+  width: 65px;
+  height: auto;
+}
+.history-number {
+  clear: both;
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+}
+
+.selection-container {
+  width: 50%;
+  margin: 40px auto;
+  border: 2px solid black;
+  clear: both;
+}
+.inner-selection-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 40px;
+}
+.question {
+  font-weight: bold;
+  font-family: 'Candal', sans-serif;
+}
+.instructions {
+  font-family: 'Helvetica';
+  margin: 20px;
+}
+.faces {
+  margin: 20px;
+}
+
+.button-container {
+
+}
+.submit-button {
+  font-family: 'Pacifico', cursive;
+  width: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

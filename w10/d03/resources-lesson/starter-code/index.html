@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="ResourcePractice">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+		<script src="js/app.js"></script>
+        <script src="js/PostsController.js"></script>
+        <script src="js/UsersController.js"></script>
+        <script src="js/TodosController.js"></script>
+        <script src="js/Post.resource.js"></script>
+        <script src="js/User.resource.js"></script>
+	</head>
+
+	<body>
+    <h1>Posts</h1>
+    <div ng-controller="PostsController as posts">
+        <div>{{posts.firstPost}}</div>
+        <div ng-repeat="post in posts.posts">{{post}}</div>
+    </div>
+
+    <h1>Users</h1>
+    <div ng-controller="UsersController as users">
+        <div>{{ users.users }}</div>
+    </div>
+
+    <h1>Todos</h1>
+    <div ng-controller="TodosController"></div>
+
+	</body>
+</html>

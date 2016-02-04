@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="HappyApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy App!</title>
+  <link href='https://fonts.googleapis.com/css?family=Candal|Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/angular.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/HappyController.js"></script>
+</head>
+<body>
+  <main ng-controller="HappyController">
+    <div class="text-container">
+      <div class="title">H A P P Y A P P&trade;</div>
+      <div class="slogan">Generally average happiness over time, since 1986</div>
+      <div class="average-container">
+        <div class="average" ng-if="history.length > 0">{{average}}</div>
+      </div>
+    </div>
+    <div class="history-container">
+      <span class="history-item" ng-repeat="face in history track by $index">
+        <img src="{{ face.image }}" class="history-face">
+        <div class="history-number">{{$index + 1}}</div>
+      </span>
+    </div>
+
+    <div class="selection-container">
+      <div class="inner-selection-container">
+        <div class="questions-container">
+          <div class="question">How's your happiness today?</div>
+          <div class="instructions">Click one to pick it, then save.</div>
+        </div>
+        <div class="faces">
+          <img ng-repeat="face in faces" src="{{face.image}}" class="{{face.type}}-face" ng-click="setSelection(face)">
+        </div>
+        <div class="button-container">
+          <form ng-submit="addCurrentSelection()">
+            <button class="submit-button">Save My Happiness</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

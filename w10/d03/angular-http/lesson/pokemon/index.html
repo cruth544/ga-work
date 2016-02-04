@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Pokemon Fun">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokemon</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/MainController.js"></script>
+</head>
+<body ng-controller="MainController as vm">
+  <h1>{{ vm.name }}</h1>
+  <div class="pokemon-list col-xs-8">
+    <button type="button" class="btn btn-info btn-xs" ng-repeat="p in vm.pokeList" ng-click="vm.showPokemon(p)">{{ p.name }}</button>
+    <div class="pokemon-list-item col-xs-3 col-xs-offset-1"></div>
+  </div>
+  <div class="display-panel col-xs-3 col-xs-offset-1" ng-if="vm.selectedPokemon">
+    <h2> {{ vm.selectedPokemon.name }} </h2>
+    <hr>
+    <img src="{{ vm.selectedPokemon.image }}" alt="">
+    <dl class="dl-horizontal">
+      <dt>Weight</dt>
+      <dd>{{ vm.selectedPokemon.weight }}</dd>
+      <dt>Speed</dt>
+      <dd>{{ vm.selectedPokemon.speed }}</dd>
+    </dl>
+  </div>
+
+</body>
+</html>

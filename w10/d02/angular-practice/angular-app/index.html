@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SomeCoolService">
+<head>
+  <meta charset="UTF-8">
+  <title>Some Cool Service</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/headerController.js"></script>
+  <script src="./js/mainController.js"></script>
+  <script src="./js/name.service.js"></script>
+  <script src="./js/ESPN.service.js"></script>
+  <script src="./js/OpenWeather.service.js"></script>
+</head>
+<body>
+  <header ng-controller="headerController">{{response}}
+    <div>
+      <form ng-submit="getTempFor()">
+        <input type="text" placeholder="City" ng-model="search">
+      </form>
+    </div>
+  </header>
+  <main ng-controller="mainController">
+    {{name}}
+  </main>
+</body>
+</html>

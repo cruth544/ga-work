@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Kitties">
+<head>
+  <meta charset="UTF-8">
+  <title>KITTIES!!!</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/UnadoptedKittiesController.js"></script>
+  <script src="./js/AdoptedKittiesController.js"></script>
+  <script src="./js/kitties.service.js"></script>
+</head>
+<body>
+  <main>
+  <div class="add-kitty-container" ng-controller="UnadoptedKittiesController">
+    <form class="adoption-form" ng-submit="addKitty()">
+      <input type="text" class="new-kitty-name" placeholder="Name" ng-model="newKitty.name">
+      <input type="number" class="new-kitty-name" placeholder="Age" ng-model="newKitty.age">
+      <input type="text" class="new-kitty-name" placeholder="Gender" ng-model="newKitty.gender">
+      <input type="submit">
+    </form>
+  </div>
+  <div class="unadoptted-kitties-controller" ng-controller="UnadoptedKittiesController">
+    <div class="kitty-list">
+      <div class="kitty-listing" ng-repeat="kitty in allKitties | filter: {adopted: false} track by $index">
+        <div class="kitty-info">
+          <div class="kitty-name">{{kitty.name}}</div>
+          <div class="kitty-age">{{kitty.age}} years old</div>
+          <div class="kitty-gender">{{kitty.gender}}</div>
+        </div>
+        <div class="kitty-picture-container"><img src="{{kitty.image}}" class="kitty-picture"></div>
+        <div class="kitty-controls">
+          <div class="adopt"><input type="checkbox" ng-model="kitty.adopted">Adopted?</div>
+          <div class="delete-button-container"><button class="delete-button" ng-click="delete(kitty)">Delete?</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="adopted-kitties-controller" ng-controller="AdoptedKittiesController">
+    <div class="kitty-list">
+      <div class="kitty-listing" ng-repeat="kitty in allKitties | filter: {adopted: true} track by $index">
+        <div class="kitty-info">
+          <div class="kitty-name">{{kitty.name}}</div>
+          <div class="kitty-age">{{kitty.age}} years old</div>
+          <div class="kitty-gender">{{kitty.gender}}</div>
+        </div>
+        <div class="kitty-picture-container"><img src="{{kitty.image}}" class="kitty-picture"></div>
+        <div class="kitty-controls">
+          <div class="adopt"><input type="checkbox" ng-model="kitty.adopted">Adopted?</div>
+          <!-- <div class="delete-button-container"><button class="delete-button" ng-click="delete(kitty)">Delete?</button></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+</body>
+</html>

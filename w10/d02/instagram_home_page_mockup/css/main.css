@@ -1,0 +1,43 @@
+html, div, main, ul, li, body {
+  border: 1px solid black;
+}
+
+body {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+.background {
+  background-image: url("./images/bgtile.png");
+  background-repeat: repeat-x;
+  height: 200px;
+  display: inline;
+}
+.phones {
+  width: 39%;
+  display: inline-block;
+  margin: 30px;
+}
+.main-focus {
+  width: 39%;
+  display: inline-block;
+  margin: 30px;
+}
+
+.link-group {
+  height: 30px;
+  display: inline;
+  float: left;
+  clear: both;
+}
+.links {
+  margin: 10px;
+  color: blue;
+  font-size: 12px;
+  font-weight: bold;
+}
+.copyright {
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(100, 100, 100, .7);
+}
