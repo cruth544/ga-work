@@ -1,1 +1,1 @@
-var app = angular.module('Kitties', [])
+var app = angular.module('Kitties', ['myFilters'])

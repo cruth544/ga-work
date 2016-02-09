@@ -1,5 +1,9 @@
 app.controller('UnadoptedKittiesController', function ($scope, Kitties) {
   $scope.allKitties = Kitties.kitties
+  $scope.ageFilter = null
+  $scope.genderSelection = ['boy', 'girl']
+  $scope.showBoys = true
+  $scope.showGirls = true
 
   $scope.delete = function (kitty) {
     Kitties.deleteKitty(kitty)

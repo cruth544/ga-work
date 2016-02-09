@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Storage Practice</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+  <div id="login-container">
+    <form id="login-form">
+      <input type="text" id="username-login" placeholder="Username">
+      <input type="text" id="password-login" placeholder="Password">
+      <input type="checkbox" name="Remember Me?" id="checkbox-login">Remember?
+      <input type="submit" id="button-login" value="Login">
+    </form>
+  </div>
+  <script>
+    console.log("Hello world")
+    $("#login-form").submit(function () {
+      console.log("Submitting")
+      if ($('#checkbox-login').checked) {
+        window.localStorage.username = $('#username-login').val()
+      }
+    })
+
+  </script>
+
+</body>
+</html>

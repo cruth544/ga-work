@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="SimpleDirective">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+		<script src="js/app.js"></script>
+        <script src="js/BodyController.js"></script>
+        <script src="js/myCustomer.directive.js"></script>
+	</head>
+
+	<body ng-controller="BodyController as body">
+        <my-customer info="body.customer"></my-customer>
+	</body>
+</html>

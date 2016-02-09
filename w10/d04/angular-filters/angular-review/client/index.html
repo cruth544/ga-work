@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TaxCalculator">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Review</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/TaxController.js"></script>
+  <script src="./js/Phishing.service.js"></script>
+</head>
+<body>
+  <main ng-controller="TaxController">
+    <form ng-submit="calculateTaxes(email)">
+      <input type="email" placeholder="E-mail" ng-model="email">
+      <input type="text" value="{{annualIncome | currency: $ : 2}}" placeholder="Annual Income" ng-model="annualIncome">
+      <input type="text" value="{{taxesPaid | currency: $ : 2}}" placeholder="Taxes Paid" ng-model="taxesPaid">
+      <input type="submit">
+    </form>
+    <div ng-model="refund" ng-show="showForm">{{refund | currency: '$' : 2}}</div>
+  </main>
+
+</body>
+</html>

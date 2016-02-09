@@ -1,0 +1,5 @@
+web: 
+  image: ctruth544/dockerized
+  ports: 
+    - "80:8080"
+

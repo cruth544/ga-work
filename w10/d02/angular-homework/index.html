@@ -9,6 +9,7 @@
   <script src="./js/UnadoptedKittiesController.js"></script>
   <script src="./js/AdoptedKittiesController.js"></script>
   <script src="./js/kitties.service.js"></script>
+  <script src="./js/kitties.filters.js"></script>
 </head>
 <body>
   <main>
@@ -16,16 +17,21 @@
     <form class="adoption-form" ng-submit="addKitty()">
       <input type="text" class="new-kitty-name" placeholder="Name" ng-model="newKitty.name">
       <input type="number" class="new-kitty-name" placeholder="Age" ng-model="newKitty.age">
-      <input type="text" class="new-kitty-name" placeholder="Gender" ng-model="newKitty.gender">
+      <select class="form-control" ng-model="newKitty.gender" ng-options="kitty for kitty in genderSelection"><option value="" default selected>Gender</option></select>
       <input type="submit">
     </form>
   </div>
   <div class="unadoptted-kitties-controller" ng-controller="UnadoptedKittiesController">
     <div class="kitty-list">
-      <div class="kitty-listing" ng-repeat="kitty in allKitties | filter: {adopted: false} track by $index">
+      <input type="number" class="age-filter" placeholder="Younger than" ng-model="ageFilter">
+      <input type="checkbox" class="gender-filter-boy" ng-model="showBoys">
+        <label>Show Boys</label>
+      <input type="checkbox" class="gender-filter-girl" ng-model="showGirls">
+        <label>Show Girls</label>
+      <div class="kitty-listing" ng-repeat="kitty in allKitties | filter: {adopted: false} | filterAge: ageFilter | showGenders: showBoys: showGirls track by $index">
         <div class="kitty-info">
-          <div class="kitty-name">{{kitty.name}}</div>
-          <div class="kitty-age">{{kitty.age}} years old</div>
+          <div class="kitty-name">{{kitty | displayName}}</div>
+          <div class="kitty-age">{{kitty.age}} months old</div>
           <div class="kitty-gender">{{kitty.gender}}</div>
         </div>
         <div class="kitty-picture-container"><img src="{{kitty.image}}" class="kitty-picture"></div>
@@ -38,10 +44,10 @@
   </div>
   <div class="adopted-kitties-controller" ng-controller="AdoptedKittiesController">
     <div class="kitty-list">
-      <div class="kitty-listing" ng-repeat="kitty in allKitties | filter: {adopted: true} track by $index">
+      <div class="kitty-listing" ng-repeat="kitty in allKitties | filter: {adopted: true} | filterAge: ageFilter track by $index">
         <div class="kitty-info">
-          <div class="kitty-name">{{kitty.name}}</div>
-          <div class="kitty-age">{{kitty.age}} years old</div>
+          <div class="kitty-name">{{kitty | displayName}}</div>
+          <div class="kitty-age">{{kitty.age}} months old</div>
           <div class="kitty-gender">{{kitty.gender}}</div>
         </div>
         <div class="kitty-picture-container"><img src="{{kitty.image}}" class="kitty-picture"></div>

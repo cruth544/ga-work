@@ -1,0 +1,88 @@
+{
+  "_args": [
+    [
+      "angular-mocks@1.2.29",
+      "/Users/ctruth/code/lucky7s/workspace/w10/d05/testing-starter/angular-testing/app"
+    ]
+  ],
+  "_from": "angular-mocks@1.2.29",
+  "_id": "angular-mocks@1.2.29",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-mocks",
+  "_nodeVersion": "0.10.26",
+  "_npmUser": {
+    "email": "angular-core+npm@google.com",
+    "name": "angularcore"
+  },
+  "_npmVersion": "2.0.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-mocks",
+    "raw": "angular-mocks@1.2.29",
+    "rawSpec": "1.2.29",
+    "scope": null,
+    "spec": "1.2.29",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-mocks/-/angular-mocks-1.2.29.tgz",
+  "_shasum": "19008ae812eca0f853bd00c9bb214cd73aa85dd4",
+  "_shrinkwrap": null,
+  "_spec": "angular-mocks@1.2.29",
+  "_where": "/Users/ctruth/code/lucky7s/workspace/w10/d05/testing-starter/angular-testing/app",
+  "author": {
+    "email": "angular-core+npm@google.com",
+    "name": "Angular Core Team"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS mocks for testing",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "19008ae812eca0f853bd00c9bb214cd73aa85dd4",
+    "tarball": "http://registry.npmjs.org/angular-mocks/-/angular-mocks-1.2.29.tgz"
+  },
+  "gitHead": "6a8e976c60c93537ac572a13467cc68bac70b8cb",
+  "homepage": "http://angularjs.org",
+  "keywords": [
+    "angular",
+    "browser",
+    "client-side",
+    "framework",
+    "mocks",
+    "testing"
+  ],
+  "license": "MIT",
+  "main": "angular-mocks.js",
+  "maintainers": [
+    {
+      "name": "zizzamia",
+      "email": "leonardo.zizzamia@gmail.com"
+    },
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    }
+  ],
+  "name": "angular-mocks",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.2.29"
+}
